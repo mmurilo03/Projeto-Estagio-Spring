@@ -86,10 +86,10 @@ public class EstagioService {
 		entity.setDataFim(dto.getDataFim());
 		entity.setCargaHoraria(dto.getCargaHoraria());
 		entity.setStatus(dto.getStatus());
-		
-		Orientador orientador = orientadorRepository.getOne(dto.getId());
-		Aluno aluno = alunoRepository.getOne(dto.getId());
-		Empresa empresa = empresaRepository.getOne(dto.getId());
+	
+		Orientador orientador = orientadorRepository.getOne(dto.getOrientadorEstagio().getId());
+		Aluno aluno = alunoRepository.getOne(dto.getAlunoEstagio().getId());
+		Empresa empresa = empresaRepository.getOne(dto.getEmpresaEstagio().getId());
 
 		entity.setOrientadorEstagio(orientador);
 		entity.setAlunoEstagio(aluno);
